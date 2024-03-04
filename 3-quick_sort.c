@@ -22,15 +22,22 @@ int partition(int *array, int lb, int ub, size_t size)
 		if (array[j] < pivot)
 		{
 			i++;
-			temp = array[j];
-			array[j] = array[i];
-			array[i] = temp;
+			if (i != j)
+			{
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+				print_array(array, size);
+			}
 		}
 	}
-	temp = array[i + 1];
-	array[i + 1] = array[ub];
-	array[ub] = temp;
-	print_array(array, size);
+	if (array[ub] < array[i + 1])
+	{
+		temp = array[i + 1];
+		array[i + 1] = array[ub];
+		array[ub] = temp;
+		print_array(array, size);
+	}
 	return (i + 1);
 }
 /**
@@ -58,5 +65,7 @@ void quick_lomuto(int *array, int lb, int ub, size_t size)
   */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
 	quick_lomuto(array, 0, size - 1, size);
 }
