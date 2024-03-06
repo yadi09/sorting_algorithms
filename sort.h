@@ -30,4 +30,9 @@ int partition(int *array, int lb, int ub, size_t size);
 void quick_lomuto(int *array, int lb, int ub, size_t size);
 void quick_sort(int *array, size_t size);
 
+/* cocktail shaker sort functions */
+void cocktail_sort_list(listint_t **list);
+void swap_forward(listint_t **head, listint_t **tail, listint_t **shaker);
+void swap_backward(listint_t **head, listint_t **tail, listint_t **shaker);
+
 #endif
