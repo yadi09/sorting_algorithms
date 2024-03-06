@@ -81,7 +81,7 @@ void cocktail_sort_list(listint_t **list)
 
 		for (ptr = ptr->prev; ptr != *list; ptr = ptr->prev)
 		{
-			if (ptr->n < ptr->next->n)
+			if (ptr->n < ptr->prev->n)
 			{
 				swap_backward(list, &tail, &ptr);
 				print_list(*list);
