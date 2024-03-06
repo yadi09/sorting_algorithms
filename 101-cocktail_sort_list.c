@@ -60,6 +60,9 @@ void cocktail_sort_list(listint_t **list)
 	int count = 1;
 	listint_t *ptr, *tail;
 
+	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
+		return;
+
 	for (tail = *list; tail != NULL; tail = tail->next)
 		;
 	while (count == 1)
